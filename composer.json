@@ -1,0 +1,37 @@
+{
+  "name": "bayfrontmedia/monolog-factory",
+  "description": "An easy to use library which allows configuration-based creation of Monolog objects.",
+  "homepage": "https://github.com/bayfrontmedia/monolog-factory",
+  "license" : "MIT",
+  "version": "1.0.0",
+  "type": "library",
+  "keywords": [
+    "php",
+    "log",
+    "logger",
+    "monolog"
+  ],
+  "authors": [
+    {
+      "name": "John Robinson",
+      "email": "john@bayfrontmedia.com",
+      "homepage": "https://www.bayfrontmedia.com",
+      "role": "Developer"
+    }
+  ],
+  "funding": [
+    {
+      "type": "patreon",
+      "url": "https://www.patreon.com/bayfrontmedia"
+    }
+  ],
+  "require": {
+    "php": ">=7.1.0",
+    "monolog/monolog": "^2.1.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Bayfront\\MonologFactory\\": "src/"
+    }
+  }
+}
