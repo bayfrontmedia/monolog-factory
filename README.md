@@ -33,7 +33,7 @@ composer require bayfrontmedia/monolog-factory
 Monolog Factory exists in order to "bootstrap" Monolog channels by means of a configuration array.
 It allows for the creation of multiple channels, each with their own handlers, formatters and processors.
 
-In some cases, you may still need to interact with the Monolog Logger object directly, and Monolog Factory allows you to do that via the [getChannel](#getchannel) method.
+In some cases, you may still need to interact with the `Monolog\Logger` object directly, and Monolog Factory allows you to do that via the [getChannel](#getchannel) method.
 
 ### Configuration array
 
@@ -47,7 +47,7 @@ $config = [
         'handlers' => [ // Each channel can have multiple handlers
             'RotatingFileHandler' => [ // Class name in Monolog\Handler namespace
                 'params' => [ // Array of parameters to pass to the handler's constructor
-                    'filename' => __DIR__.'/logs/app.log',
+                    'filename' => __DIR__ . '/logs/app.log',
                     'maxFiles' => 30,
                     'level' => 'WARNING'
                 ],
@@ -58,17 +58,17 @@ $config = [
                         'dateformat' => 'Y-m-d H:i:s'
                     ]
                 ]
-
             ]
         ],
         'processors' => [ // Each channel can have multiple processors
-            'WebProcessor' => [ // Class name in Monolog\Processor namespace
+            'IntrospectionProcessor' => [ // Class name in Monolog\Processor namespace
                 'params' => [ // Array of parameters to pass to the processor's constructor
+                    'level' => 'ERROR'
                 ]
             ],
-            'IntrospectionProcessor'
+            'WebProcessor' => [
+            ]
         ]
-
     ]
 ];
 ```
@@ -86,7 +86,7 @@ $config = [
         'handlers' => [
             'RotatingFileHandler' => [
                 'params' => [
-                    'filename' => __DIR__.'/logs/app.log',
+                    'filename' => __DIR__ . '/logs/app.log',
                     'maxFiles' => 30,
                     'level' => 'WARNING'
                 ],
@@ -97,11 +97,14 @@ $config = [
                         'dateformat' => 'Y-m-d H:i:s'
                     ]
                 ]
-
             ]
         ],
         'processors' => [
-            'IntrospectionProcessor' => []
+            'IntrospectionProcessor' => [
+                'params' => [
+                    'level' => 'ERROR'
+                ]
+            ]
         ]
     ],
     'Dev' => [
