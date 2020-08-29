@@ -55,12 +55,12 @@ $config = [
                     'name' => 'LineFormatter', // Class name in Monolog\Formatter namespace
                     'params' => [ // Array of parameters to pass to the formatter's constructor
                         'output' => "[%datetime%] %channel%.%level_name%: %message% %context% %extra%\n",
-                        'dateformat' => 'Y-m-d H:i:s'
+                        'dateformat' => 'Y-m-d H:i:s T'
                     ]
                 ]
             ]
         ],
-        'processors' => [ // Each channel can have multiple processors
+        'processors' => [ // Optional processors for this channel
             'IntrospectionProcessor' => [ // Class name in Monolog\Processor namespace
                 'params' => [ // Array of parameters to pass to the processor's constructor
                     'level' => 'ERROR'
@@ -94,7 +94,7 @@ $config = [
                     'name' => 'LineFormatter',
                     'params' => [
                         'output' => "[%datetime%] %channel%.%level_name%: %message% %context% %extra%\n",
-                        'dateformat' => 'Y-m-d H:i:s'
+                        'dateformat' => 'Y-m-d H:i:s T'
                     ]
                 ]
             ]
