@@ -130,6 +130,7 @@ try {
 
 ### Public methods
 
+- [getChannels](#getchannels)
 - [getCurrentChannel](#getcurrentchannel)
 - [getDefaultChannel](#getdefaultchannel)
 - [addChannel](#addchannel)
@@ -148,6 +149,22 @@ try {
 - [info](#info)
 - [debug](#debug)
 - [log](#log)
+
+<hr />
+
+### getChannels
+
+**Description:**
+
+Return array of channel names.
+
+**Parameters:**
+
+- (None)
+
+**Returns:**
+
+- (array)
 
 <hr />
 

@@ -220,6 +220,17 @@ class LoggerFactory
     }
 
     /**
+     * Return array of channel names.
+     *
+     * @return array
+     */
+
+    public function getChannels(): array
+    {
+        return array_keys(self::$channels);
+    }
+
+    /**
      * Return name of current channel.
      *
      * @return string
