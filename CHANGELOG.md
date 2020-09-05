@@ -16,7 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Added `getCurrentChannel` and `getDefaultChannel` methods.
+- Added `getChannels`, `getCurrentChannel` and `getDefaultChannel` methods.
 
 ## [1.0.0] - 2020.08.29
 
