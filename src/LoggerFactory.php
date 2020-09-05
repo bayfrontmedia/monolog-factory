@@ -220,6 +220,28 @@ class LoggerFactory
     }
 
     /**
+     * Return name of current channel.
+     *
+     * @return string
+     */
+
+    public function getCurrentChannel(): string
+    {
+        return self::$current_channel;
+    }
+
+    /**
+     * Return name of default channel.
+     *
+     * @return string
+     */
+
+    public function getDefaultChannel(): string
+    {
+        return self::$default_channel;
+    }
+
+    /**
      * Add a logger instance as a new channel with the same name.
      *
      * If an existing instance exists with the same name, it will be overwritten.
@@ -241,17 +263,21 @@ class LoggerFactory
     }
 
     /**
-     * Returns logger instance for a given channel name.
+     * Returns logger instance for a given channel.
      *
-     * @param string $channel
+     * @param string|null $channel (Name of channel to return. If NULL, the current channel will be returned)
      *
      * @return Logger
      *
      * @throws ChannelNotFoundException
      */
 
-    public function getChannel(string $channel): Logger
+    public function getChannel(string $channel = NULL): Logger
     {
+
+        if (NULL === $channel) {
+            return self::$channels[self::$default_channel];
+        }
 
         if (!isset(self::$channels[$channel])) {
             throw new ChannelNotFoundException('Unable to get channel (' . $channel . '): channel not found');

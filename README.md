@@ -130,6 +130,8 @@ try {
 
 ### Public methods
 
+- [getCurrentChannel](#getcurrentchannel)
+- [getDefaultChannel](#getdefaultchannel)
 - [addChannel](#addchannel)
 - [getChannel](#getchannel)
 - [isChannel](#ischannel)
@@ -146,6 +148,38 @@ try {
 - [info](#info)
 - [debug](#debug)
 - [log](#log)
+
+<hr />
+
+### getCurrentChannel
+
+**Description:**
+
+Return name of current channel.
+
+**Parameters:**
+
+- (None)
+
+**Returns:**
+
+- (string)
+
+<hr />
+
+### getDefaultChannel
+
+**Description:**
+
+Return name of default channel.
+
+**Parameters:**
+
+- (None)
+
+**Returns:**
+
+- (string)
 
 <hr />
 
@@ -183,11 +217,11 @@ $logger->addChannel($my_logger);
 
 **Description:**
 
-Returns logger instance for a given channel name.
+Returns logger instance for a given channel.
 
 **Parameters:**
 
-- `$channel` (string)
+- `$channel = NULL` (string|null): Name of channel to return. If NULL, the current channel will be returned
 
 **Returns:**
 

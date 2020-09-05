@@ -3,7 +3,7 @@
   "description": "An easy to use library which allows configuration-based creation of Monolog objects.",
   "homepage": "https://github.com/bayfrontmedia/monolog-factory",
   "license" : "MIT",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "library",
   "keywords": [
     "php",
